@@ -33,3 +33,19 @@ plt.plot(xgrid,bellman.upolicy(Vf3,xgrid))
 plt.xlabel('x')
 plt.ylabel('u')
 plt.legend(('theta = 0.5','theta = 1.','theta=3.'))
+
+plt.savefig('Images/fig1.eps')
+plt.close()
+
+bellman.store_parameters(Vf0)
+Vf0.theta = 0.5
+plt.plot(xgrid,bellman.upolicy(Vf0,xgrid))
+Vf0.theta = 1.
+plt.plot(xgrid,bellman.upolicy(Vf0,xgrid))
+Vf0.theta = 3.
+plt.plot(xgrid,bellman.upolicy(Vf0,xgrid))
+
+plt.xlabel('x')
+plt.ylabel('u')
+plt.legend(('theta = 0.5','theta = 1.','theta=3.'))
+plt.savefig('Images/fig2.eps')
